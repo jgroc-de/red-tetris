@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`empty row 1`] = `
+<div
+  className="is-primary"
+>
+  <div
+    className="square"
+  />
+  <div
+    className="square"
+  />
+  <div
+    className="square"
+  />
+  <div
+    className="square"
+  />
+  <div
+    className="square"
+  />
+  <div
+    className="square"
+  />
+  <div
+    className="square"
+  />
+  <div
+    className="square"
+  />
+  <div
+    className="square"
+  />
+  <div
+    className="square"
+  />
+</div>
+`;
+
+exports[`row containing tetriminos 1`] = `
+<div
+  className="is-primary"
+>
+  <div
+    className="square"
+  />
+  <div
+    className="square"
+  />
+  <div
+    className="square"
+  />
+  <div
+    className="square"
+  />
+  <div
+    className="square"
+  />
+  <div
+    className="square colored"
+  />
+  <div
+    className="square colored"
+  />
+  <div
+    className="square"
+  />
+  <div
+    className="square"
+  />
+  <div
+    className="square"
+  />
+</div>
+`;

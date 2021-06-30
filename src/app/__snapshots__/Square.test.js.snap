@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`empty square 1`] = `
+<div
+  className="square"
+/>
+`;
+
+exports[`filled square 1`] = `
+<div
+  className="square colored-grey"
+/>
+`;
+
+exports[`tetriminos square 1`] = `
+<div
+  className="square colored"
+/>
+`;

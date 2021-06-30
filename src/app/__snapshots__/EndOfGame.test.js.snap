@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`basic test 1`] = `
+<div
+  id="end"
+>
+  <div
+    className="nes-container with-title is-dark is-centered"
+  >
+    <p
+      className="title"
+    >
+      End Of Game
+    </p>
+    <p>
+      score: 
+      40
+    </p>
+    <p>
+      lines: 
+      1
+    </p>
+    <p>
+      level: 
+      0
+    </p>
+  </div>
+  <button
+    className="nes-btn is-primary"
+    id="restart"
+    onClick={[Function]}
+  >
+    Restart Game
+  </button>
+</div>
+`;
+
+exports[`click test 1`] = `
+<div>
+  <div
+    id="end"
+  >
+    <div
+      class="nes-container with-title is-dark is-centered"
+    >
+      <p
+        class="title"
+      >
+        End Of Game
+      </p>
+      <p>
+        score: 
+        40
+      </p>
+      <p>
+        lines: 
+        1
+      </p>
+      <p>
+        level: 
+        0
+      </p>
+    </div>
+    <button
+      class="nes-btn is-primary"
+      id="restart"
+    >
+      Restart Game
+    </button>
+  </div>
+</div>
+`;

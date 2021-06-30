@@ -1,0 +1,163 @@
+@charset "utf-8";
+@import "../node_modules/bulma/bulma.sass";
+@import "../node_modules/nes.css/css/nes.css";
+@import "./main.scss";
+
+$red: #EB4236;
+$yellow: #ebbe2f;
+$lightRed: #EB6359;
+$green: #0e4d07;
+$blue: #534DEB;
+$white: #f5f5f5;
+$grey: #72878a;
+$gbc-deco: 15vw;
+
+%highPadding {
+  padding: 24px 0;
+}
+
+html, body {
+  margin: 0;
+  background-color: $yellow;
+}
+
+#left {
+  height: 100vh;
+  width: 1px;
+  background-color: $yellow;
+  position: absolute;
+  top: 0;
+  left: $gbc-deco;
+  box-shadow: -16px 0 15px; 
+  z-index: 1;
+}
+
+#right {
+  height: 100vh;
+  width: 1px;
+  background-color: $yellow;
+  position: absolute;
+  top: 0;
+  right: $gbc-deco;
+  box-shadow: 16px 0 15px; 
+  z-index: 1;
+}
+
+footer {
+  height: 10vh;
+  position:fixed;
+  bottom:0;
+  width: 100vw;
+  text-align: center;
+  color: grey;
+  background-color: $yellow;
+  @extend %highPadding;
+  margin-top:24px;
+
+  span {
+    border-style: double;
+    border-radius: 24px;
+    padding: 3px 12px;
+
+  }
+}
+#game-area {
+  background-color: #22bb77;
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  font-family: 'Press Start 2P', cursive;
+  background-image:
+    linear-gradient(to bottom, transparent 50%, #006655 50%),
+    linear-gradient(to right, #006655 50%, #22bb77 50%);
+  background-size: 20px 20px, 20px 20px;
+  display: flex;
+  height: 100%;
+}
+
+#game {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+#board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  max-width: 600px;
+
+  div {
+    display: flex;
+  }
+}
+
+#meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+  
+  :first-child p {
+    text-align: center;
+  }
+
+  p {
+    text-align: right;
+  }
+}
+  
+.square {
+  background-color: #f7d51d;
+  border: 1px solid #999;
+  height: 30px;
+  min-width: 20px;
+  width: 30px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+}
+
+.colored {
+  background-color: red;
+}
+
+.colored-grey {
+  background-color: black;
+}
+
+#end {
+  color: black;
+  text-align: center;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;  
+
+  p {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 48px;
+  }
+
+  button {
+    margin-top: 96px;
+    font-size: 24px;
+    transform: translate(0px,0px);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  button:hover {
+    box-shadow: 5px 12px 12px grey;
+    transform: translate(-3px,-3px);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+}
