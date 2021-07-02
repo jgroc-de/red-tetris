@@ -14,7 +14,7 @@ function EndOfGame(props) {
     }
 
     return (
-        <div id="end">
+        <div className="gg-center">
             <div className="nes-container with-title is-dark is-centered">
                 <p className="title">End Of Game</p>
                 <p>score: {props.game.score.value}</p>
