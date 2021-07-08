@@ -1,4 +1,4 @@
-import { emptySquared } from '../constanteValues'
+import { emptySquared } from '../../constanteValues'
 import Row from './Row'
 
 function Score(props) {

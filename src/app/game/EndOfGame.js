@@ -1,4 +1,4 @@
-import getInitValues from "../library/getInitValues/getInitValues"
+import getInitValues from "../../library/getInitValues/getInitValues"
 
 function EndOfGame(props) {
 

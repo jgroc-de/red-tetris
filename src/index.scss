@@ -161,17 +161,24 @@ html, body {
   button {
     margin-top: 96px;
     font-size: 24px;
-    transform: translate(0px,0px);
-    transition: transform 0.2s, box-shadow 0.2s;
   }
+}
 
-  button:hover {
-    box-shadow: 5px 12px 12px grey;
-    transform: translate(-3px,-3px);
-    transition: box-shadow 0.2s, transform 0.2s;
-  }
+button {
+  transform: translate(0px,0px);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  box-shadow: 5px 12px 12px grey;
+  transform: translate(-3px,-3px);
+  transition: box-shadow 0.2s, transform 0.2s;
 }
 
 .gg-flex {
   display: flex;
+}
+
+#waiting-room {
+  margin: auto;
 }

@@ -1,12 +1,12 @@
 import React from 'react'
 import { useState, useEffect, useMemo } from "react"
-import checkIfTetriminosCanMove from '../library/checkIfTetriminosCanMove/checkIfTetriminosCanMove'
-import updateBoard from '../library/newCycle/updateBoard'
+import checkIfTetriminosCanMove from '../../library/checkIfTetriminosCanMove/checkIfTetriminosCanMove'
+import updateBoard from '../../library/newCycle/updateBoard'
 import Board from './Board'
 import EndOfGame from './EndOfGame'
 import Score from './Score'
-import getInitValues from '../library/getInitValues/getInitValues'
-import { numberOfColumns, numberOfLines, emptySquared, rotationCases } from '../constanteValues'
+import getInitValues from '../../library/getInitValues/getInitValues'
+import { numberOfColumns, numberOfLines, emptySquared, rotationCases } from '../../constanteValues'
 
 function Game(props) {
     const [tShape, setTShape] = useState(getInitValues('shape'))

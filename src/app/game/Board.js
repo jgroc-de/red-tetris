@@ -1,8 +1,8 @@
 import Row from './Row'
-import setTetriminosInBoard from '../library/setTetriminosInBoard/setTetriminosInBoard'
-import {numberOfLines, numberOfColumns, emptySquared} from '../constanteValues'
-import checkIfTetriminosCanMove from '../library/checkIfTetriminosCanMove/checkIfTetriminosCanMove'
-import getShapeType from '../library/checkIfTetriminosCanMove/getShapeType'
+import setTetriminosInBoard from '../../library/setTetriminosInBoard/setTetriminosInBoard'
+import {numberOfLines, numberOfColumns, emptySquared} from '../../constanteValues'
+import checkIfTetriminosCanMove from '../../library/checkIfTetriminosCanMove/checkIfTetriminosCanMove'
+import getShapeType from '../../library/checkIfTetriminosCanMove/getShapeType'
 
 function getGhostShape(shape) {
     let ghostShape = []
@@ -13,15 +13,15 @@ function getGhostShape(shape) {
 
     return ghostShape
 }
+
 function getFullBoard(props, numberOfColumns, numberOfLines, emptySquared) {
-    let fullBoard = setTetriminosInBoard(props.board, props.shape, props.position, numberOfColumns, emptySquared)
     let position = {x: props.position.x, y: props.position.y + 1}
     while (checkIfTetriminosCanMove(props.board, props.shape, position, numberOfLines, numberOfColumns, emptySquared)) {
         ++position.y
     }
     position.y -= 1
-    fullBoard = setTetriminosInBoard(fullBoard, getGhostShape(props.shape), position, numberOfColumns, emptySquared)
-
+    let fullBoard = setTetriminosInBoard(props.board, getGhostShape(props.shape), position, numberOfColumns, emptySquared)
+    fullBoard = setTetriminosInBoard(fullBoard, props.shape, props.position, numberOfColumns, emptySquared)
     return fullBoard
 }
 

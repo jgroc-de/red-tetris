@@ -2,18 +2,18 @@
 
 exports[`empty square 1`] = `
 <div
-  className="square"
+  className="square filledSquare nullBackground"
 />
 `;
 
 exports[`filled square 1`] = `
 <div
-  className="square colored-grey"
+  className="square filledSquare tBackground"
 />
 `;
 
 exports[`tetriminos square 1`] = `
 <div
-  className="square colored"
+  className="square filledSquare oBackground"
 />
 `;

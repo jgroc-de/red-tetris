@@ -1,5 +1,5 @@
 import React from 'react'
-import {emptySquared} from '../constanteValues'
+import {emptySquared} from '../../constanteValues'
 
 function Square(props) {
     let cssClasses = ['square']
