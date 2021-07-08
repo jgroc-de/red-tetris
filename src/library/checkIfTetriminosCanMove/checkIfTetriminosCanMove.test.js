@@ -1,4 +1,4 @@
-import { numberOfLines, numberOfColumns, emptySquared, filledSquared } from '../../constanteValues'
+import { numberOfLines, numberOfColumns, emptySquared } from '../../constanteValues'
 import checkIfTetriminosCanMove from '../checkIfTetriminosCanMove/checkIfTetriminosCanMove'
 import getNewBoard from '../getInitValues/getNewBoard'
 import getTetriminosShape from '../getInitValues/getTetriminosShape'
@@ -36,7 +36,7 @@ test('over side', () => {
 })
 
 test('over non empty square', () => {
-    let board = getNewBoard(numberOfLines * numberOfColumns, filledSquared)
+    let board = getNewBoard(numberOfLines * numberOfColumns, "p")
     let tetriminosShape = getTetriminosShape('O')[0]
     let tetriminosPosition = { x: 1, y: 1 }
     let test = checkIfTetriminosCanMove(board, tetriminosShape, tetriminosPosition, numberOfLines, numberOfColumns, emptySquared)

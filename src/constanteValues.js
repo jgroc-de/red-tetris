@@ -1,169 +1,167 @@
 export const numberOfLines = 20
 export const numberOfColumns = 10
-export const filledSquared = '-'
-export const filledTetriminosSquared = 'x'
 export const emptySquared = ' '
 export const rotationCases = 4
 export const LShape = [
     [
-        emptySquared + emptySquared + filledTetriminosSquared,
-        filledTetriminosSquared + filledTetriminosSquared + filledTetriminosSquared,
+        emptySquared + emptySquared + 'L',
+        'LLL',
         emptySquared + emptySquared + emptySquared,
     ],
     [
-        emptySquared + filledTetriminosSquared + emptySquared,
-        emptySquared + filledTetriminosSquared + emptySquared,
-        emptySquared + filledTetriminosSquared + filledTetriminosSquared,
+        emptySquared + 'L' + emptySquared,
+        emptySquared + 'L' + emptySquared,
+        emptySquared + 'LL',
     ],
     [
         emptySquared + emptySquared + emptySquared,
-        filledTetriminosSquared + filledTetriminosSquared + filledTetriminosSquared,
-        filledTetriminosSquared + emptySquared + emptySquared,
+        'LLL',
+        'L' + emptySquared + emptySquared,
     ],
     [
-        filledTetriminosSquared + filledTetriminosSquared + emptySquared,
-        emptySquared + filledTetriminosSquared + emptySquared,
-        emptySquared + filledTetriminosSquared + emptySquared,
+        'LL' + emptySquared,
+        emptySquared + 'L' + emptySquared,
+        emptySquared + 'L' + emptySquared,
     ]
 ]
 export const JShape = [
     [
-        filledTetriminosSquared + emptySquared + emptySquared,
-        filledTetriminosSquared + filledTetriminosSquared + filledTetriminosSquared,
+        'J' + emptySquared + emptySquared,
+        'JJJ',
         emptySquared + emptySquared + emptySquared,
     ],
     [
-        emptySquared + filledTetriminosSquared + filledTetriminosSquared,
-        emptySquared + filledTetriminosSquared + emptySquared,
-        emptySquared + filledTetriminosSquared + emptySquared,
+        emptySquared + 'JJ',
+        emptySquared + 'J' + emptySquared,
+        emptySquared + 'J' + emptySquared,
     ],
     [
         emptySquared + emptySquared + emptySquared,
-        filledTetriminosSquared + filledTetriminosSquared + filledTetriminosSquared,
-        emptySquared + emptySquared + filledTetriminosSquared,
+        'JJJ',
+        emptySquared + emptySquared + 'J',
     ],
     [
-        emptySquared + filledTetriminosSquared + emptySquared,
-        emptySquared + filledTetriminosSquared + emptySquared,
-        filledTetriminosSquared + filledTetriminosSquared + emptySquared,
+        emptySquared + 'J' + emptySquared,
+        emptySquared + 'J' + emptySquared,
+        'JJ' + emptySquared,
     ]
 ]
 export const SShape = [
     [
-        emptySquared + filledTetriminosSquared + filledTetriminosSquared,
-        filledTetriminosSquared + filledTetriminosSquared + emptySquared,
+        emptySquared + 'SS',
+        'SS' + emptySquared,
         emptySquared + emptySquared + emptySquared,
     ],
     [
-        emptySquared + filledTetriminosSquared + emptySquared,
-        emptySquared + filledTetriminosSquared + filledTetriminosSquared,
-        emptySquared + emptySquared + filledTetriminosSquared,
+        emptySquared + 'S' + emptySquared,
+        emptySquared + 'SS',
+        emptySquared + emptySquared + 'S',
     ],
     [
         emptySquared + emptySquared + emptySquared,
-        emptySquared + filledTetriminosSquared + filledTetriminosSquared,
-        filledTetriminosSquared + filledTetriminosSquared + emptySquared,
+        emptySquared + 'SS',
+        'SS' + emptySquared,
     ],
     [
-        filledTetriminosSquared + emptySquared + emptySquared,
-        filledTetriminosSquared + filledTetriminosSquared + emptySquared,
-        emptySquared + filledTetriminosSquared + emptySquared,
+        'S' + emptySquared + emptySquared,
+        'SS' + emptySquared,
+        emptySquared + 'S' + emptySquared,
     ]
 ]
 export const OShape = [
     [
-        emptySquared + filledTetriminosSquared + filledTetriminosSquared + emptySquared,
-        emptySquared + filledTetriminosSquared + filledTetriminosSquared + emptySquared,
+        emptySquared + 'OO' + emptySquared,
+        emptySquared + 'OO' + emptySquared,
         emptySquared + emptySquared + emptySquared + emptySquared,
         emptySquared + emptySquared + emptySquared + emptySquared,
     ],
     [
-        emptySquared + filledTetriminosSquared + filledTetriminosSquared + emptySquared,
-        emptySquared + filledTetriminosSquared + filledTetriminosSquared + emptySquared,
+        emptySquared + 'OO' + emptySquared,
+        emptySquared + 'OO' + emptySquared,
         emptySquared + emptySquared + emptySquared + emptySquared,
         emptySquared + emptySquared + emptySquared + emptySquared,
     ],
     [
-        emptySquared + filledTetriminosSquared + filledTetriminosSquared + emptySquared,
-        emptySquared + filledTetriminosSquared + filledTetriminosSquared + emptySquared,
+        emptySquared + 'OO' + emptySquared,
+        emptySquared + 'OO' + emptySquared,
         emptySquared + emptySquared + emptySquared + emptySquared,
         emptySquared + emptySquared + emptySquared + emptySquared,
     ],
     [
-        emptySquared + filledTetriminosSquared + filledTetriminosSquared + emptySquared,
-        emptySquared + filledTetriminosSquared + filledTetriminosSquared + emptySquared,
+        emptySquared + 'OO' + emptySquared,
+        emptySquared + 'OO' + emptySquared,
         emptySquared + emptySquared + emptySquared + emptySquared,
         emptySquared + emptySquared + emptySquared + emptySquared,
     ],
 ]
 export const TShape = [
     [
-        emptySquared + filledTetriminosSquared + emptySquared,
-        filledTetriminosSquared + filledTetriminosSquared + filledTetriminosSquared,
+        emptySquared + 'T' + emptySquared,
+        'TTT',
         emptySquared + emptySquared + emptySquared,
     ],
     [
-        emptySquared + filledTetriminosSquared + emptySquared,
-        emptySquared + filledTetriminosSquared + filledTetriminosSquared,
-        emptySquared + filledTetriminosSquared + emptySquared,
+        emptySquared + 'T' + emptySquared,
+        emptySquared + 'TT',
+        emptySquared + 'T' + emptySquared,
     ],
     [
         emptySquared + emptySquared + emptySquared,
-        filledTetriminosSquared + filledTetriminosSquared + filledTetriminosSquared,
-        emptySquared + filledTetriminosSquared + emptySquared,
+        'TTT',
+        emptySquared + 'T' + emptySquared,
     ],
     [
-        emptySquared + filledTetriminosSquared + emptySquared,
-        filledTetriminosSquared + filledTetriminosSquared + emptySquared,
-        emptySquared + filledTetriminosSquared + emptySquared,
+        emptySquared + 'T' + emptySquared,
+        'TT' + emptySquared,
+        emptySquared + 'T' + emptySquared,
     ]
 ]
 export const ZShape = [
     [
-        filledTetriminosSquared + filledTetriminosSquared + emptySquared,
-        emptySquared + filledTetriminosSquared + filledTetriminosSquared,
+        'ZZ' + emptySquared,
+        emptySquared + 'ZZ',
         emptySquared + emptySquared + emptySquared,
     ],
     [
-        emptySquared + emptySquared + filledTetriminosSquared,
-        emptySquared + filledTetriminosSquared + filledTetriminosSquared,
-        emptySquared + filledTetriminosSquared + emptySquared,
+        emptySquared + emptySquared + 'Z',
+        emptySquared + 'ZZ',
+        emptySquared + 'Z' + emptySquared,
     ],
     [
         emptySquared + emptySquared + emptySquared,
-        filledTetriminosSquared + filledTetriminosSquared + emptySquared,
-        emptySquared + filledTetriminosSquared + filledTetriminosSquared,
+        'ZZ' + emptySquared,
+        emptySquared + 'ZZ',
     ],
     [
-        emptySquared + filledTetriminosSquared + emptySquared,
-        filledTetriminosSquared + filledTetriminosSquared + emptySquared,
-        filledTetriminosSquared + emptySquared + emptySquared,
+        emptySquared + 'Z' + emptySquared,
+        'ZZ' + emptySquared,
+        'Z' + emptySquared + emptySquared,
     ],
 
 ]
 export const IShape = [
     [
         emptySquared + emptySquared + emptySquared + emptySquared,
-        filledTetriminosSquared + filledTetriminosSquared + filledTetriminosSquared + filledTetriminosSquared,
+        'IIII',
         emptySquared + emptySquared + emptySquared + emptySquared,
         emptySquared + emptySquared + emptySquared + emptySquared,
     ],
     [
-        emptySquared + emptySquared + filledTetriminosSquared + emptySquared,
-        emptySquared + emptySquared + filledTetriminosSquared + emptySquared,
-        emptySquared + emptySquared + filledTetriminosSquared + emptySquared,
-        emptySquared + emptySquared + filledTetriminosSquared + emptySquared,
+        emptySquared + emptySquared + 'I' + emptySquared,
+        emptySquared + emptySquared + 'I' + emptySquared,
+        emptySquared + emptySquared + 'I' + emptySquared,
+        emptySquared + emptySquared + 'I' + emptySquared,
     ],
     [
         emptySquared + emptySquared + emptySquared + emptySquared,
         emptySquared + emptySquared + emptySquared + emptySquared,
-        filledTetriminosSquared + filledTetriminosSquared + filledTetriminosSquared + filledTetriminosSquared,
+        'IIII',
         emptySquared + emptySquared + emptySquared + emptySquared,
     ],
     [
-        emptySquared + filledTetriminosSquared + emptySquared + emptySquared,
-        emptySquared + filledTetriminosSquared + emptySquared + emptySquared,
-        emptySquared + filledTetriminosSquared + emptySquared + emptySquared,
-        emptySquared + filledTetriminosSquared + emptySquared + emptySquared,
+        emptySquared + 'I' + emptySquared + emptySquared,
+        emptySquared + 'I' + emptySquared + emptySquared,
+        emptySquared + 'I' + emptySquared + emptySquared,
+        emptySquared + 'I' + emptySquared + emptySquared,
     ],
 ]

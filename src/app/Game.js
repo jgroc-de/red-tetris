@@ -6,7 +6,7 @@ import Board from './Board'
 import EndOfGame from './EndOfGame'
 import Score from './Score'
 import getInitValues from '../library/getInitValues/getInitValues'
-import { filledSquared, numberOfColumns, numberOfLines, emptySquared, rotationCases } from '../constanteValues'
+import { numberOfColumns, numberOfLines, emptySquared, rotationCases } from '../constanteValues'
 
 function Game(props) {
     const [tShape, setTShape] = useState(getInitValues('shape'))
@@ -38,7 +38,7 @@ function Game(props) {
 
     useEffect(() => {
         const timeRemaining = (100 + 900 / (game.level.value + 1)) - (Date.now() - game.timer.value)
-        const timer = setTimeout(updateBoard, timeRemaining, game, numberOfColumns, numberOfLines, filledSquared, emptySquared)
+        const timer = setTimeout(updateBoard, timeRemaining, game, numberOfColumns, numberOfLines, emptySquared)
 
         const handlekeyPress = (e) => {
             let x = game.tetriminos.position.value.x

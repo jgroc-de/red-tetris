@@ -12,37 +12,9 @@ $white: #f5f5f5;
 $grey: #72878a;
 $gbc-deco: 15vw;
 
-%highPadding {
-  padding: 24px 0;
-}
-
 html, body {
   margin: 0;
   background-color: $yellow;
-}
-
-footer {
-  height: 10vh;
-  position: absolute;
-  top: 750px;
-  width: 100vw;
-  text-align: center;
-  color: grey;
-  background-color: $yellow;
-  @extend %highPadding;
-  margin-top:24px;
-
-  span {
-    border-style: double;
-    border-radius: 24px;
-    padding: 3px 12px;
-
-  }
-}
-#game-area {
-  background-color: #22bb77;
-  height: 100%;
-  width: 100%;
 }
 
 #root {
@@ -74,6 +46,17 @@ footer {
   }
 }
 
+#preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  div {
+    display: flex;
+  }
+}
+
 .gg-full-width {
   width: 100%;
   display: flex;
@@ -84,14 +67,20 @@ footer {
 #choose-game {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  height: 60%;
+
+  button {
+    margin-bottom: 4px;
+  }
+
+  .nes-button:hover {
+    background-color: #92cc41;
+  }
 }
 
 #create-game {
   .nes-btn {
     font-size: 24px;
-    position: relative;
-    left: 80%;
   }
 }
 
@@ -113,20 +102,42 @@ footer {
 .square {
   background-color: #f7d51d;
   border: 1px solid #999;
-  height: 30px;
+  height: 3.5vh;
   min-width: 20px;
-  width: 30px;
+  width: 3.5vh;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
 }
 
-.colored {
-  background-color: red;
+.filledSquare {
+  
+  border: 8px double black;
 }
 
-.colored-grey {
-  background-color: black;
+.IBackground {
+  background-color: lightblue;
+}
+.JBackground {
+  background-color: yellow;
+}
+.LBackground {
+  background-color: red;
+}
+.OBackground {
+  background-color: pink;
+}
+.SBackground {
+  background-color: purple;
+}
+.TBackground {
+  background-color: #006655;
+}
+.ZBackground {
+  background-color: saddlebrown;
+}
+.gBackground {
+  background-color: #ffffff77;
 }
 
 .gg-center {
@@ -159,4 +170,8 @@ footer {
     transform: translate(-3px,-3px);
     transition: box-shadow 0.2s, transform 0.2s;
   }
+}
+
+.gg-flex {
+  display: flex;
 }

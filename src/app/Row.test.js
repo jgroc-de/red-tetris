@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import Row from './Row'
-import  {numberOfColumns, numberOfLines, filledTetriminosSquared, emptySquared} from '../constanteValues'
+import  {numberOfColumns, numberOfLines, emptySquared} from '../constanteValues'
 import setTetriminosInBoard from '../library/setTetriminosInBoard/setTetriminosInBoard'
 import getNewBoard from '../library/getInitValues/getNewBoard'
 import getTetriminosShape from '../library/getInitValues/getTetriminosShape'
@@ -12,6 +12,7 @@ test('empty row', () => {
     const component = renderer.create(<Row
         key={index}
         number={index}
+        width={numberOfColumns}
         squares={board.slice(index * numberOfColumns, index * numberOfColumns + numberOfColumns)}
     />)
     let tree = component.toJSON()
@@ -23,10 +24,11 @@ test('row containing tetriminos', () => {
     let index = 4
     let tetriminosShape = getTetriminosShape('O')[0]
     let tetriminosPosition = { x: 4, y: 3 }
-    board = setTetriminosInBoard(board, tetriminosShape, tetriminosPosition, filledTetriminosSquared)
+    board = setTetriminosInBoard(board, tetriminosShape, tetriminosPosition, emptySquared)
     const component = renderer.create(<Row
         key={index}
         number={index}
+        width={numberOfColumns}
         squares={board.slice(index * numberOfColumns, index * numberOfColumns + numberOfColumns)}
     />)
     let tree = component.toJSON()

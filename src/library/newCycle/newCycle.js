@@ -5,18 +5,19 @@ import setTetriminosInBoard from '../setTetriminosInBoard/setTetriminosInBoard'
 import checkIfTetriminosCanMove from '../checkIfTetriminosCanMove/checkIfTetriminosCanMove'
 import removeFullLines from './removeFullLines'
 
-function newCycle(game, numberOfColumns, numberOfLines, filledSquared, emptySquared) {
+function newCycle(game, numberOfColumns, numberOfLines, emptySquared) {
     let shape = game.tetriminos.shape.value[game.tetriminos.rotation.value]
     let fullBoard = setTetriminosInBoard(
         game.board.value.slice(),
         shape,
         game.tetriminos.position.value,
-        filledSquared
+        numberOfColumns,
+        emptySquared
     )
-    const fullLinesInBoard = countFullLinesIn(fullBoard, numberOfColumns, numberOfLines, filledSquared)
+    const fullLinesInBoard = countFullLinesIn(fullBoard, numberOfColumns, numberOfLines, emptySquared)
 
     if (fullLinesInBoard > 0) {
-        fullBoard = removeFullLines(fullBoard, fullLinesInBoard, numberOfColumns, filledSquared, emptySquared)
+        fullBoard = removeFullLines(fullBoard, fullLinesInBoard, numberOfColumns, emptySquared)
     }
     const clearedLines = fullLinesInBoard + game.clearedLines.value
     game.clearedLines.set(clearedLines)

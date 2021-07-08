@@ -19,36 +19,81 @@ useEffect(() => {
 }, []);
 */
 
+function getRooms() {
+  return [
+    {
+      name: "game1",
+      id: "1",
+      max: 4,
+      players: 2,
+    },
+    {
+      id: "2",
+      name: "game2",
+      max: 8,
+      players: 3,
+    }
+  ]
+}
+
+function createRoomID() {
+  return 3
+}
+
 function App(props) {
   const [game, setGame] = useState(getInitValues('game'))
   const [playerName, setPlayerName] = useState(getInitValues('playerName'))
+  const [playerID] = useState(getInitValues('playerID'))
+  const [roomID, setRoomID] = useState(getInitValues('roomID'))
+  const [roomName, setRoomName] = useState(getInitValues('roomName'))
 
+  const roomsData = getRooms()
   const launchGame = (e) => {
+    setRoomName(document.getElementById("game-field").value)
+    setRoomID(createRoomID())
     setGame(true)
   }
-
+  const joinGame = (e) => {
+    setRoomName(e.target.dataset.name)
+    setRoomID(e.target.dataset.id)
+    setGame(true)
+  }
+  const player = {
+    name: playerName,
+    id: playerID
+  }
+  const room = {
+    id: roomID,
+    name: roomName,
+  }
   if (game) {
-    return (<WaitingRoom continue={setGame} playerName={playerName} />)
+    return (<WaitingRoom continue={setGame} player={player} room={room}/>)
   }
   if (!playerName) {
     return (<Name set={setPlayerName} />)
+  }
+
+  let rooms = []
+  let i = 0
+  for (let room of roomsData) {
+    rooms.push(<button data-id={room.id} data-name={room.name} key={i++} className="nes-button" onClick={joinGame}
+      >{room.name}: {room.players}/{room.max} players</button>)
   }
   return (
     <div className="gg-full-width">
       <div id="choose-game" className="nes-container with-title is-dark">
         <p className="title">Game List</p>
-        <button className="nes-button">
-          Game 1: 3/4 players
-        </button>
-        <button className="nes-button">
-          Game 1: 3/4 players
-        </button>
+        {rooms}
       </div>
       <div id="create-game" className="nes-field nes-container with-title is-dark">
         <p className="title">Create Game</p>
-        <label htmlFor="game-field">Game Name</label>
-        <input type="text" id="game-field" className="nes-input" />
-        <button className="nes-btn is-success" onClick={launchGame}>Play</button>
+        <div className="gg-flex">
+          <div>
+            <label htmlFor="game-field">Game Name</label>
+            <input type="text" id="game-field" className="nes-input" />
+          </div>
+          <button className="nes-btn is-success" onClick={launchGame}>Create</button>
+        </div>
       </div>
     </div>
   )

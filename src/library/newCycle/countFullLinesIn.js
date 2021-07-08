@@ -1,12 +1,18 @@
-function countFullLinesIn(board, numberOfColumns, numberOfLines, filledSquared) {
+function countFullLinesIn(board, numberOfColumns, numberOfLines, emptySquared) {
     let count = 0
-    let fullLine = filledSquared.repeat(numberOfColumns)
-    for (let y = 0; y < numberOfLines; ++y) {
-        let tmp = board.slice(y * numberOfColumns, (y + 1) * numberOfColumns)
-        if (tmp === fullLine) {
+    for (let i = 0; i < numberOfLines; i++) {
+        let j = 0
+        while (j < numberOfColumns) {
+            if (board[i * numberOfColumns + j] === emptySquared) {
+                break
+            }
+            ++j
+        }
+        if (j === numberOfColumns) {
             ++count
         }
-    }
+    } 
+    
     return count
 }
 

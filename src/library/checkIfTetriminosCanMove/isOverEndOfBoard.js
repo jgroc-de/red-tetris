@@ -1,9 +1,8 @@
-import { filledTetriminosSquared } from "../../constanteValues"
-
-function getRealBottom(tetriminosShape) {
+function getRealBottom(tetriminosShape, emptySquared) {
     let length = tetriminosShape.length
+    let emptyLine = emptySquared.repeat(tetriminosShape[0].length)
     while (length-- > 0) {
-        if (tetriminosShape[length].includes(filledTetriminosSquared)) {
+        if (tetriminosShape[length] !== emptyLine) {
             return length
         }
     }
@@ -11,8 +10,8 @@ function getRealBottom(tetriminosShape) {
     return length
 }
 
-function isOverEndOfBoard(tetriminosPosition, tetriminosShape, numberOfLines) {
-    if (getRealBottom(tetriminosShape) + tetriminosPosition.y >= numberOfLines) {
+function isOverEndOfBoard(tetriminosPosition, tetriminosShape, numberOfLines, emptySquared) {
+    if (getRealBottom(tetriminosShape, emptySquared) + tetriminosPosition.y >= numberOfLines) {
         return true
     }
 

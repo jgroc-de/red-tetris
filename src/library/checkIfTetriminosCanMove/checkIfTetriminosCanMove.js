@@ -3,7 +3,7 @@ import isOverEndOfBoard from './isOverEndOfBoard'
 import isOverThings from './isOverThings'
 
 function checkIfTetriminosCanMove(board, tetriminosShape, tetriminosPosition, numberOfLines, numberOfColumns, emptySquared) {
-    if (isOverEndOfBoard(tetriminosPosition, tetriminosShape, numberOfLines)) {
+    if (isOverEndOfBoard(tetriminosPosition, tetriminosShape, numberOfLines, emptySquared)) {
         return false
     }
     if (isOverBoardSides(tetriminosPosition, tetriminosShape, numberOfColumns)) {

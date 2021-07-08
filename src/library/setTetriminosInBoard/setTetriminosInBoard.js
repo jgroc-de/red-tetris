@@ -1,7 +1,6 @@
-import {numberOfColumns, emptySquared} from '../../constanteValues'
 import insertInBoard from './insertInBoard'
 
-function setTetriminosInBoard(fullBoard, shape, position, token) {
+function setTetriminosInBoard(fullBoard, shape, position, numberOfColumns, emptySquared) {
     let updatedBoard = fullBoard
 
     for (let y = 0; y < shape.length; y++) {
@@ -9,7 +8,7 @@ function setTetriminosInBoard(fullBoard, shape, position, token) {
             let posY = (position.y + y) * numberOfColumns
             let posX = position.x + x
             if (shape[y][x] !== emptySquared) {
-                updatedBoard = insertInBoard(updatedBoard, posX + posY, token)
+                updatedBoard = insertInBoard(updatedBoard, posX + posY, shape[y][x])
             }
         }
     }

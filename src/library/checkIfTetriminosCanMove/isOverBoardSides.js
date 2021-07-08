@@ -1,9 +1,10 @@
-import { filledTetriminosSquared } from "../../constanteValues"
+import getShapeType from "./getShapeType"
 
 function getRealFirst(tetriminosShape) {
     let min = tetriminosShape.length
+    let type = getShapeType(tetriminosShape)
     for (let line of tetriminosShape) {
-        let tmp = line.indexOf(filledTetriminosSquared)
+        let tmp = line.indexOf(type)
         if (tmp < min && tmp >= 0) {
             min = tmp
         }
@@ -13,8 +14,9 @@ function getRealFirst(tetriminosShape) {
 
 function getRealLast(tetriminosShape) {
     let max = 0
+    let type = getShapeType(tetriminosShape)
     for (let line of tetriminosShape) {
-        let tmp = line.lastIndexOf(filledTetriminosSquared)
+        let tmp = line.lastIndexOf(type)
         if (tmp > max) {
             max = tmp
         }

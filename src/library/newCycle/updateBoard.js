@@ -2,7 +2,7 @@ import checkIfTetriminosCanMove from '../checkIfTetriminosCanMove/checkIfTetrimi
 import newCycle from './newCycle'
 
 
-function updateBoard(game, numberOfColumns, numberOfLines, filledSquared, emptySquared) {
+function updateBoard(game, numberOfColumns, numberOfLines, emptySquared) {
     let nextPosition = { x: game.tetriminos.position.value.x, y: game.tetriminos.position.value.y + 1 }
     let shape = game.tetriminos.shape.value[game.tetriminos.rotation.value]
 
@@ -11,7 +11,7 @@ function updateBoard(game, numberOfColumns, numberOfLines, filledSquared, emptyS
         game.tetriminos.position.set(nextPosition)
         return
     }
-    newCycle(game, numberOfColumns, numberOfLines, filledSquared, emptySquared)
+    newCycle(game, numberOfColumns, numberOfLines, emptySquared)
 }
 
 export default updateBoard

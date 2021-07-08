@@ -1,11 +1,16 @@
-function removeFullLines(board, countFullLines, numberOfColumns, filledSquared, emptySquared) {
-    let fullLine = filledSquared.repeat(numberOfColumns)
+import { numberOfLines } from "../../constanteValues"
+
+function removeFullLines(board, countFullLines, numberOfColumns, emptySquared) {
     let newBoard = emptySquared.repeat(numberOfColumns).repeat(countFullLines)
-    let tmpBoard = board.split(fullLine)
     
-    for (let part of tmpBoard) {
-        if (part) {
-            newBoard += part
+    for (let i = 0; i < numberOfLines; i++) {
+        let j = 0
+        while (j < numberOfColumns) {
+            if (board[i * numberOfColumns + j] === emptySquared) {
+                newBoard += board.substring(i * numberOfColumns, (i + 1) * numberOfColumns)
+                break
+            }
+            ++j
         }
     }
 

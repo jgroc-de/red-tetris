@@ -1,12 +1,12 @@
 import React from 'react'
-import {filledSquared, filledTetriminosSquared} from '../constanteValues'
+import {emptySquared} from '../constanteValues'
 
 function Square(props) {
     let cssClasses = ['square']
-    if (props.square === filledTetriminosSquared) {
-        cssClasses.push('colored')
-    } else if (props.square === filledSquared) {
-        cssClasses.push('colored-grey')
+    if (props.square !== emptySquared) {
+        cssClasses.push('filledSquare')
+        cssClasses.push(props.square + 'Background')
+
     }
     return (<div className={cssClasses.join(' ')}></div>)
 }
