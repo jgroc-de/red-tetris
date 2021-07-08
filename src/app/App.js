@@ -49,9 +49,15 @@ function App(props) {
 
   const roomsData = getRooms()
   const launchGame = (e) => {
-    setRoomName(document.getElementById("game-field").value)
-    setRoomID(createRoomID())
-    setGame(true)
+    const input = document.getElementById('game_field')
+    const name = input.value
+    if (name) {
+      setRoomName(name)
+      setRoomID(createRoomID())
+      setGame(true)
+    } else {
+      input.classList.add("is-error")
+    }
   }
   const joinGame = (e) => {
     setRoomName(e.target.dataset.name)

@@ -43,8 +43,8 @@ main {
   
     #power {
       height: $shift;
-      position: relative;
-      left: -58px;
+      position: absolute;
+      left: 18px;
       top: 15vh;
       color: $white;
       font-size: 12px;
@@ -59,16 +59,12 @@ main {
     }
 
     #game-area {
-      position: relative;
-      top: -$shift;
       background-color: #22bb77;
       height: $gameHeight;
       width: 100%;
     }
   
     #gamebox {
-      position: relative;
-      top: -$shift;
       font-size: 36px;
       height: 10vh;
       line-height: 10vh;
