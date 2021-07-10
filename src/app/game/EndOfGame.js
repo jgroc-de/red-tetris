@@ -1,4 +1,4 @@
-import getInitValues from "../../library/getInitValues/getInitValues"
+import getInitValues from '../../library/data/init/getInitValues'
 
 function EndOfGame(props) {
 
@@ -14,14 +14,14 @@ function EndOfGame(props) {
     }
 
     return (
-        <div className="gg-center">
-            <div className="nes-container with-title is-dark is-centered">
-                <p className="title">End Of Game</p>
+        <div className='gg-center'>
+            <div className='nes-container with-title is-dark is-centered'>
+                <p className='title'>End Of Game</p>
                 <p>score: {props.game.score.value}</p>
                 <p>lines: {props.game.clearedLines.value}</p>
                 <p>level: {props.game.level.value}</p>
             </div>
-            <button id="restart" onClick={restartGame} className="nes-btn is-primary">Restart Game</button>
+            <button id='restart' onClick={restartGame} className='nes-btn is-primary'>Restart Game</button>
         </div>
     )
 }

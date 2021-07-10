@@ -1,4 +1,4 @@
-import { numberOfColumns, numberOfLines, emptySquared } from '../../constanteValues'
+import { numberOfColumns, numberOfLines, emptySquared } from '../../../constanteValues'
 import getNewBoard from './getNewBoard'
 import getNextTetriminos from './getNextTetriminos'
 

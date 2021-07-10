@@ -1,4 +1,4 @@
-import getNewBoard from "./getNewBoard"
+import getNewBoard from './getNewBoard'
 import {emptySquared} from '../../constanteValues'
 
 test('new board', () => {

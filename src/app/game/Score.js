@@ -25,20 +25,20 @@ function Score(props) {
     
     return (
         <div id='meta'>
-            <div className="nes-container with-title is-dark">
-                <p className="title">next</p>
+            <div className='nes-container with-title is-dark'>
+                <p className='title'>next</p>
                 <div id='preview'>{nextShape}</div>
             </div>
-            <div className="nes-container with-title is-dark">
-                <p className="title">level</p>
+            <div className='nes-container with-title is-dark'>
+                <p className='title'>level</p>
                 <p>{props.level}</p>
             </div>
-            <div className="nes-container with-title is-dark">
-                <p className="title">score</p>
+            <div className='nes-container with-title is-dark'>
+                <p className='title'>score</p>
                 <p>{props.score}</p>
             </div>
-            <div className="nes-container with-title is-dark">
-                <p className="title">lines</p>
+            <div className='nes-container with-title is-dark'>
+                <p className='title'>lines</p>
                 <p>{props.clearedLines}</p>
             </div>
         </div>

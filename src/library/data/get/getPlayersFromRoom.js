@@ -1,11 +1,11 @@
 function getPlayersFromRoom(id) {
     return [
         {
-            name: "lolo",
+            name: 'lolo',
             id: 234
         },
         {
-            name: "teset",
+            name: 'teset',
             id: 87
         },
     ]

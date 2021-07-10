@@ -1,9 +1,9 @@
-import setNewTetriminos from './setNewTetriminos'
-import getScoreFor from './getScoreFor'
-import countFullLinesIn from './countFullLinesIn'
-import setTetriminosInBoard from '../setTetriminosInBoard/setTetriminosInBoard'
-import checkIfTetriminosCanMove from '../checkIfTetriminosCanMove/checkIfTetriminosCanMove'
-import removeFullLines from './removeFullLines'
+import setNewTetriminos from '../data/init/setNewTetriminos'
+import getScoreFor from './rules/getScoreFor'
+import countFullLinesIn from './board/countFullLinesIn'
+import setTetriminosInBoard from './board/setTetriminosInBoard'
+import checkIfTetriminosCanMove from './rules/checkIfTetriminosCanMove'
+import removeFullLines from './board/removeFullLines'
 
 function newCycle(game, numberOfColumns, numberOfLines, emptySquared) {
     let shape = game.tetriminos.shape.value[game.tetriminos.rotation.value]

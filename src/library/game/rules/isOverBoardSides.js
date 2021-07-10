@@ -1,4 +1,4 @@
-import getShapeType from "./getShapeType"
+import getShapeType from '../shape/getShapeType'
 
 function getRealFirst(tetriminosShape) {
     let min = tetriminosShape.length

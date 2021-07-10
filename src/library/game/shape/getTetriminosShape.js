@@ -1,4 +1,4 @@
-import { IShape, JShape, LShape, OShape, SShape, TShape, ZShape } from "../../constanteValues"
+import { IShape, JShape, LShape, OShape, SShape, TShape, ZShape } from '../../../constanteValues'
 
 function getTetriminosShape(shape) {
     switch (shape) {

@@ -1,6 +1,6 @@
-import { numberOfColumns, numberOfLines } from "../../constanteValues"
-import getNewBoard from "../getInitValues/getNewBoard"
-import getTetriminosShape from "../getInitValues/getTetriminosShape"
+import { numberOfColumns, numberOfLines } from '../../constanteValues'
+import getNewBoard from '../data/init/getNewBoard'
+import getTetriminosShape from '../game/shape/getTetriminosShape'
 
 
 function getFakeBoards(squareContent) {

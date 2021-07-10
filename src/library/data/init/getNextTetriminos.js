@@ -1,4 +1,4 @@
-import getTetriminosShape from "./getTetriminosShape"
+import getTetriminosShape from '../../game/shape/getTetriminosShape'
 
 function getNextTetriminos() {
     if (process.env.MODE === 'TEST') {

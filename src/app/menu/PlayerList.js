@@ -1,5 +1,5 @@
-import { useState } from "react"
-import getPlayersFromRoom from '../../library/getData/getPlayersFromRoom'
+import { useState } from 'react'
+import getPlayersFromRoom from '../../library/data/get/getPlayersFromRoom'
 
 function PlayerList(props) {
     const [players, setPlayers] = useState(getPlayersFromRoom(props.roomID))
@@ -10,8 +10,8 @@ function PlayerList(props) {
     }
 
     return (
-        <div className="nes-container with-title is-dark">
-            <p className="title">player List</p>
+        <div className='nes-container with-title is-dark'>
+            <p className='title'>player List</p>
             {playerList}
         </div>)
 }

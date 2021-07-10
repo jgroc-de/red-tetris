@@ -1,4 +1,4 @@
-import getInitValues from "../getInitValues/getInitValues"
+import getInitValues from './getInitValues'
 
 function setNewTetriminos(tetriminos) {
   tetriminos.rotation.set(getInitValues('rotation'))

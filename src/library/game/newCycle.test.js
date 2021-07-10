@@ -1,11 +1,11 @@
 import newCycle from './newCycle'
-import getFakeBoards from '../testFunctions/getFakeBoard'
-import { numberOfColumns, numberOfLines, emptySquared } from '../../constanteValues'
+import getFakeBoards from '../../testFunctions/getFakeBoard'
+import { numberOfColumns, numberOfLines, emptySquared } from '../../../constanteValues'
 
 
 
 test('new cycle full board', () => {
-    const game = getFakeBoards("p")
+    const game = getFakeBoards('p')
     newCycle(game, numberOfColumns, numberOfLines, emptySquared)
     expect(game.clearedLines.set).toHaveBeenCalledTimes(1)
     expect(game.score.set).toHaveBeenCalledTimes(1)

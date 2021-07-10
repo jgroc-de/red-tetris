@@ -10,7 +10,7 @@ test('not full board', () => {
 })
 
 test('full board', () => {
-    const game = getFakeBoards("p")
+    const game = getFakeBoards('p')
     updateBoard(game, numberOfColumns, numberOfLines, emptySquared)
     expect(game.timer.set).toHaveBeenCalledTimes(1)
     expect(game.tetriminos.position.set).toHaveBeenCalledTimes(1)

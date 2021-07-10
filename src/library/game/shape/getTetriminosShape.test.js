@@ -1,5 +1,5 @@
-import { IShape, JShape, LShape, OShape, SShape, TShape, ZShape } from "../../constanteValues"
-import getTetriminosShape from "./getTetriminosShape"
+import { IShape, JShape, LShape, OShape, SShape, TShape, ZShape } from '../../constanteValues'
+import getTetriminosShape from './getTetriminosShape'
 
 test('shape\'s test', () => {
     let shape = getTetriminosShape('I')

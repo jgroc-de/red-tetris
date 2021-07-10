@@ -1,4 +1,4 @@
-import { numberOfLines } from "../../constanteValues"
+import { numberOfLines } from '../../../constanteValues'
 
 function removeFullLines(board, countFullLines, numberOfColumns, emptySquared) {
     let newBoard = emptySquared.repeat(numberOfColumns).repeat(countFullLines)

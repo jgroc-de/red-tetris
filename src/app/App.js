@@ -1,20 +1,20 @@
 import React, { useState } from 'react'
-import getInitValues from '../library/getInitValues/getInitValues'
+import getInitValues from '../library/data/init/getInitValues'
 import WaitingRoom from './menu/WaitingRoom'
 import Name from './menu/Name'
 import Rooms from './menu/Rooms'
 
 /*
-import socketIOClient from "socket.io-client";
-const ENDPOINT = "http://127.0.0.1:4001";
+import socketIOClient from 'socket.io-client';
+const ENDPOINT = 'http://127.0.0.1:4001';
 */
 
 /*
-const [response, setResponse] = useState("")
+const [response, setResponse] = useState('')
 
 useEffect(() => {
   const socket = socketIOClient(ENDPOINT);
-  socket.on("FromAPI", data => {
+  socket.on('FromAPI', data => {
     setResponse(data);
   });
 }, []);

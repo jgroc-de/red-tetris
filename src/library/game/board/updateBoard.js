@@ -1,5 +1,5 @@
-import checkIfTetriminosCanMove from '../checkIfTetriminosCanMove/checkIfTetriminosCanMove'
-import newCycle from './newCycle'
+import checkIfTetriminosCanMove from '../rules/checkIfTetriminosCanMove'
+import newCycle from '../newCycle'
 
 
 function updateBoard(game, numberOfColumns, numberOfLines, emptySquared) {

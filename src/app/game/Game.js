@@ -1,12 +1,14 @@
 import React from 'react'
-import { useState, useEffect, useMemo } from "react"
-import checkIfTetriminosCanMove from '../../library/checkIfTetriminosCanMove/checkIfTetriminosCanMove'
-import updateBoard from '../../library/newCycle/updateBoard'
+import { useState, useEffect, useMemo } from 'react'
+import checkIfTetriminosCanMove from '../../library/game/rules/checkIfTetriminosCanMove'
+import updateBoard from '../../library/game/board/updateBoard'
 import Board from './Board'
 import EndOfGame from './EndOfGame'
 import Score from './Score'
-import getInitValues from '../../library/getInitValues/getInitValues'
+import getInitValues from '../../library/data/init/getInitValues'
 import { numberOfColumns, numberOfLines, emptySquared, rotationCases } from '../../constanteValues'
+import getPlayersFromRoom from '../../library/data/get/getPlayersFromRoom'
+import SBoard from './specter/SBoard'
 
 function Game(props) {
     const [tShape, setTShape] = useState(getInitValues('shape'))
@@ -74,15 +76,24 @@ function Game(props) {
             clearInterval(timer)
         }
     }, [game])
+    let opponents = getPlayersFromRoom(props.roomID)
+    let boardSpecters = []
+    for (let opponent of opponents) {
+        if (opponent.id !== props.player.id)
+        boardSpecters.push(<SBoard opponent={opponent} board={game.board.value}/>)
+    }
 
     if (game.endOfGame.value) {
         return <EndOfGame game={game} />
     }
     let shape = game.tetriminos.shape.value[game.tetriminos.rotation.value]
     return (
-        <div id='game' className="is-pattern">
+        <div id='game' className='is-pattern'>
             <Board board={game.board.value} shape={shape} position={game.tetriminos.position.value} />
             <Score shape={game.tetriminos.nextShape.value[0]} score={game.score.value} level={game.level.value} clearedLines={game.clearedLines.value} />
+            <div id='specters'>
+                {boardSpecters}
+            </div>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import getTetriminosShape from "../getInitValues/getTetriminosShape";
+import getTetriminosShape from '../getInitValues/getTetriminosShape';
 
 function getFakeTetriminos() {
     return {
