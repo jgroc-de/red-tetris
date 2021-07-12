@@ -18,7 +18,8 @@ function SBoard(props) {
     }
 
     return (
-        <div id='' data-name={props.opponent.name}>
+        <div className='s-board nes-container is-dark with-title' data-name={props.opponent.name}>
+            <p className="title">{props.opponent.name}</p>
             {rows}
         </div>
     )

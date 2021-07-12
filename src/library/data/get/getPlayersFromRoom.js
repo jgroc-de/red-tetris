@@ -8,6 +8,14 @@ function getPlayersFromRoom(id) {
             name: 'teset',
             id: 87
         },
+        {
+            name: 'player1',
+            id: 187
+        },
+        {
+            name: 'player2',
+            id: 287
+        },
     ]
 }
 

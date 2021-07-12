@@ -78,9 +78,11 @@ function Game(props) {
     }, [game])
     let opponents = getPlayersFromRoom(props.roomID)
     let boardSpecters = []
+    let i = 0;
     for (let opponent of opponents) {
-        if (opponent.id !== props.player.id)
-        boardSpecters.push(<SBoard opponent={opponent} board={game.board.value}/>)
+        if (opponent.id !== props.player.id) {
+            boardSpecters.push(<SBoard key={i++} opponent={opponent} board={game.board.value} />)
+        }
     }
 
     if (game.endOfGame.value) {
@@ -92,7 +94,7 @@ function Game(props) {
             <Board board={game.board.value} shape={shape} position={game.tetriminos.position.value} />
             <Score shape={game.tetriminos.nextShape.value[0]} score={game.score.value} level={game.level.value} clearedLines={game.clearedLines.value} />
             <div id='specters'>
-                {boardSpecters}
+                
             </div>
         </div>
     )

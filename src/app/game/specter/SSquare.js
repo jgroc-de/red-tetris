@@ -4,9 +4,7 @@ import {emptySquared} from '../../../constanteValues'
 function SSquare(props) {
     let cssClasses = ['s-square']
     if (props.square !== emptySquared) {
-        cssClasses.push('filledSquare')
-        cssClasses.push(props.square + 'Background')
-
+        cssClasses.push('s-filledSquare')
     }
     return (<div className={cssClasses.join(' ')}></div>)
 }

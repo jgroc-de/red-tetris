@@ -38,7 +38,7 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 70%;
+  width: 65%;
   max-width: 600px;
 
   div {
@@ -88,7 +88,7 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 30%;
+  width: 35%;
   
   :first-child p {
     text-align: center;
@@ -111,7 +111,6 @@ html, body {
 }
 
 .filledSquare {
-  
   border: 8px double black;
 }
 
@@ -181,4 +180,33 @@ button:hover {
 
 #waiting-room {
   margin: auto;
+}
+
+#specters {
+  position: absolute;
+  right:-160px;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: flex-start;
+  height: 90%;
+  
+  .title {
+    font-size: 8px;
+  }
+}
+.s-square {
+  background-color: grey;
+  height: 1vh;
+  width: 1vh;
+  padding: 0;
+}
+
+.s-filledSquare {
+  background-color: black;
+}
+
+.s-board {
+  div {
+    display: flex;
+  }
 }
