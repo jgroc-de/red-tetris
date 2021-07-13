@@ -3,6 +3,7 @@ function Name(props) {
         const input = document.getElementById('name_field')
         const name = input.value
         if (name) {
+            props.socket.emit('username', name);
             props.set(name)
         } else {
             input.classList.add('is-error')

@@ -12,6 +12,7 @@ function WaitingRoom(props) {
 
     const quit = (e) => {
         props.continue(false)
+        props.socket.emit('leave-room', props.room.name)
     }
 
     if (play) {
@@ -21,7 +22,10 @@ function WaitingRoom(props) {
     return (
         <div id='waiting-room' className='nes-container with-title is-dark gg-margin-auto'>
             <p className='title'>room: {props.room.name}</p>
-            <PlayerList roomID={props.room.id} player={props.player} />
+            <PlayerList
+                socket={props.socket.volatile}
+                room={props.room}
+                player={props.player} />
             <div>
                 <button className='nes-btn is-error' onClick={quit}>Exit</button>
                 <button className='nes-btn is-success' onClick={goPlay}>Play</button>
