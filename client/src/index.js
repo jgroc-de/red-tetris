@@ -6,6 +6,9 @@ import socketIOClient from 'socket.io-client'
 //import reportWebVitals from './reportWebVitals'
 
 let socket = socketIOClient(process.env.REACT_APP_ENDPOINT, {reconnectionAttempts: 5})
+if (process.env.NODE_ENV !== 'production') {
+  localStorage.debug = '*'
+}
 
 ReactDOM.render(
   <React.StrictMode>

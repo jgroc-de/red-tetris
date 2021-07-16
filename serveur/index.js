@@ -51,6 +51,7 @@ io.on('connection', (socket) => {
         getPLayers(io, socket, roomName)
     })
     socket.on('get-player-list', (roomName) => {
+        socket.leave(roomName)
         getPLayers(io, socket, roomName)
     })
     setInterval(function (registerRooms) {
