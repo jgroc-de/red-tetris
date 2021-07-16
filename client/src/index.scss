@@ -210,3 +210,7 @@ button:hover {
     display: flex;
   }
 }
+
+#me-in-list::before {
+  content: "> "
+}

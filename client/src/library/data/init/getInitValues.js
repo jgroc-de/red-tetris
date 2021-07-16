@@ -22,20 +22,6 @@ function getInitValues(name) {
             return 0
         case 'rotation':
             return 0
-        case 'playerName':
-            return false
-        case 'name':
-            return null
-        case 'game':
-            return false
-        case 'roomID':
-            return 0
-        case 'playerID':
-            return 0
-        case 'roomName':
-            return 'myRoom'
-        case 'play':
-            return false
         default:
             return 0
     }

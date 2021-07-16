@@ -1,7 +1,7 @@
 import getTetriminosShape from '../../game/shape/getTetriminosShape'
 
 function getNextTetriminos() {
-    if (process.env.MODE === 'TEST') {
+    if (process.env.NODE_ENV === 'test') {
         return getTetriminosShape('I')
     }
     const line = 'IJLOSTZ'

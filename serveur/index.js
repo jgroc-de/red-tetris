@@ -4,9 +4,7 @@ import http from 'http'
 import {Server} from 'socket.io'
 import getPLayers from './library/getPlayers.js'
 
-
-const app = express()
-const server = http.createServer(app)
+const server = http.createServer(express())
 const io = new Server(server, {
     cors: {
         origin: ['http://localhost:3000']
@@ -16,17 +14,9 @@ const io = new Server(server, {
 const MAX_PLAYER = 4
 
 let registerRooms = []
-
-app.get('/', (request, response) => {
-    response.sendFile(__dirname + '/index.html')
-})
-
 let users = []
 
 io.on('connection', (socket) => {
-    app.get('/getPlayersList', (request, response) => {
-    
-    })
     socket.on('connect', () => {
         io.emit('user status', 'user connected')
     })
@@ -49,21 +39,19 @@ io.on('connection', (socket) => {
             socket.emit('error', 'room\'s name already exists!')
         }
     })
-    
-    socket.on('getPlayers', (roomName) => {
-        getPLayers(io, socket, roomName)
-    })
     socket.on('join-room', (roomName) => {
         if (true /* room not full */) {
             socket.join(roomName)
             socket.emit('join-room', roomName)
-            getPLayers(io, socket, roomName)
         } else {
             socket.emit('error', 'game is full!')
         }
     })
     socket.on('leave-room', (roomName) => {
         socket.leave(roomName)
+    })
+    socket.on('get-player-list', (roomName) => {
+        getPLayers(io, roomName)
     })
     setInterval(function (registerRooms) {
         const rooms = []
