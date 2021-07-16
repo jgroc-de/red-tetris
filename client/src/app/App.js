@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react'
 import WaitingRoom from './menu/WaitingRoom'
 import Name from './menu/Name'
 import Rooms from './menu/Rooms'
-import socketIOClient from 'socket.io-client'
-
-const socket = socketIOClient(process.env.REACT_APP_ENDPOINT)
 
 function App(props) {
   const [game, setGame] = useState(false)
@@ -12,24 +9,20 @@ function App(props) {
   const [playerID] = useState(0)
   const [roomID, setRoomID] = useState(0)
   const [roomName, setRoomName] = useState('')
-  const [isConnected, setIsConnected] = useState(socket.connected)
+  const [isConnected, setIsConnected] = useState(props.socket.connected)
 
   useEffect(() => {
-    socket.on('connect', () => {
+    props.socket.on('connect', () => {
       setIsConnected(true)
     })
-    socket.on('disconnect', () => {
+    props.socket.on('disconnect', () => {
       setIsConnected(false)
     })
 
     return () => {
-      socket.off('connect')
-      socket.off('disconnect')
+      props.socket.off('connect')
+      props.socket.off('disconnect')
     }
-  })
-
-  useEffect(() => {
-
   })
 
   if (isConnected) {
@@ -41,7 +34,7 @@ function App(props) {
   }
 
   if (!playerName) {
-    return (<Name socket={socket.volatile} set={setPlayerName} />)
+    return (<Name socket={props.socket} set={setPlayerName} />)
   }
   if (game) {
     const player = {
@@ -55,11 +48,12 @@ function App(props) {
 
     return (
       <WaitingRoom
-        socket={socket.volatile}
-        continue={setGame}
+        socket={props.socket}
+        setGame={setGame}
         player={player}
         room={room}
-      />)
+      />
+    )
   }
 
   return (
@@ -67,7 +61,7 @@ function App(props) {
       setGame={setGame}
       setRoomID={setRoomID}
       setRoomName={setRoomName}
-      socket={socket.volatile}
+      socket={props.socket}
     />
   )
 }

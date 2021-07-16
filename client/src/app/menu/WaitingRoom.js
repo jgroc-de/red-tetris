@@ -4,7 +4,7 @@ import PlayerList from './PlayerList'
 
 function WaitingRoom(props) {
     const [play, setPlay] = useState(false)
-    const [players, setPlayers] = useState([{name:props.player.name, id:props.player.id}])
+    const [players, setPlayers] = useState([{ name: props.player.name, id: props.player.id }])
 
     useEffect(() => {
         props.socket.on('players', (playersList) => {
@@ -35,7 +35,7 @@ function WaitingRoom(props) {
     }
 
     const quit = (e) => {
-        props.continue(false)
+        props.setGame(false)
         props.socket.emit('leave-room', props.room.name)
     }
 
@@ -45,7 +45,7 @@ function WaitingRoom(props) {
 
     const launch = []
     if (players[0].id === props.player.id) {
-        launch.push(<button className='nes-btn is-success' onClick={goPlay}>Play</button>)
+        launch.push(<button key={'playBtn'} className='nes-btn is-success' onClick={goPlay}>Play</button>)
     }
 
     return (

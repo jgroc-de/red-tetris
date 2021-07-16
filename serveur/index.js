@@ -48,10 +48,10 @@ io.on('connection', (socket) => {
         }
     })
     socket.on('leave-room', (roomName) => {
-        socket.leave(roomName)
+        getPLayers(io, socket, roomName)
     })
     socket.on('get-player-list', (roomName) => {
-        getPLayers(io, roomName)
+        getPLayers(io, socket, roomName)
     })
     setInterval(function (registerRooms) {
         const rooms = []

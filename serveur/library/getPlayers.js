@@ -1,8 +1,11 @@
-function getPLayers(io, roomName) {
+function getPLayers(io, socket, roomName) {
     let players = []
-    let clients = io.sockets.adapter.rooms.get(roomName);
-    console.log(new Date())
-    console.log(roomName, clients)
+    let clients = io.sockets.adapter.rooms.get(roomName); 
+    if (!clients) {
+        console.log(new Date())
+        console.log(roomName, clients)
+        return
+    }
     for (const clientId of clients) {
         const client = io.sockets.sockets.get(clientId);
         players.push({
@@ -12,7 +15,7 @@ function getPLayers(io, roomName) {
         })
     }
 
-    io.to(roomName).emit('players', players)
+    socket.to(roomName).emit('players', players)
 }
 
 export default getPLayers

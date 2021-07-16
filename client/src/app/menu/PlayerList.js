@@ -4,13 +4,14 @@ function PlayerList(props) {
     for (let player of props.players) {
         if (player.name !== props.player.name) {
             playerList.push(
-                <p key={i++} data-id={player.id}>{player.name}</p>
+                <p key={i} data-id={player.id}>{player.name}</p>
             )
         } else {
             playerList.push(
-                <p id="me-in-list" key={i++} data-id={player.id}>{player.name}</p>
+                <p id="me-in-list" key={i} data-id={player.id}>{player.name}</p>
             )
         }
+        i++
     }
 
     return (

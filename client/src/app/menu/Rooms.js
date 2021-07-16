@@ -17,7 +17,9 @@ function Rooms(props) {
         }
     }
     const joinGame = (e) => {
-        props.socket.emit('join-room', e.target.dataset.name)
+        if (props.socket.connected) {
+            props.socket.emit('join-room', e.target.dataset.name)
+        }
     }
 
     const [rooms, setRooms] = useState([])
@@ -51,22 +53,24 @@ function Rooms(props) {
         )
     }
 
-    return (<div className='gg-full-width'>
-        <div id='choose-game' className='nes-container with-title is-dark'>
-            <p className='title'>Game List</p>
-            {roomsData}
-        </div>
-        <div id='create-game' className='nes-field nes-container with-title is-dark'>
-            <p className='title'>Create Game</p>
-            <div className='gg-flex'>
-                <div>
-                    <label htmlFor='game-field'>Game Name</label>
-                    <input type='text' id='game-field' className='nes-input' />
+    return (
+        <div className='gg-full-width'>
+            <div id='choose-game' className='nes-container with-title is-dark'>
+                <p className='title'>Game List</p>
+                {roomsData}
+            </div>
+            <div id='create-game' className='nes-field nes-container with-title is-dark'>
+                <p className='title'>Create Game</p>
+                <div className='gg-flex'>
+                    <div>
+                        <label htmlFor='game-field'>Game Name</label>
+                        <input type='text' id='game-field' className='nes-input' />
+                    </div>
+                    <button className='nes-btn is-success' onClick={launchGame}>Create</button>
                 </div>
-                <button className='nes-btn is-success' onClick={launchGame}>Create</button>
             </div>
         </div>
-    </div>)
+    )
 }
 
 export default Rooms

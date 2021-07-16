@@ -2,12 +2,14 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.scss'
 import App from './app/App'
+import socketIOClient from 'socket.io-client'
 //import reportWebVitals from './reportWebVitals'
 
+let socket = socketIOClient(process.env.REACT_APP_ENDPOINT, {reconnectionAttempts: 5})
 
 ReactDOM.render(
   <React.StrictMode>
-    <App init={0}/>
+    <App socket={socket.volatile}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
